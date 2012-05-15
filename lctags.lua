@@ -125,8 +125,8 @@ function findTagsFiles(event)
     -- TODO: Don't call findUp if we've already found a tag file for this directory.
     if not shouldIgnore(event, path) then
       local tagsFile, tagsPath = findUp(path, event.config.tagsFile)
-      if tagsFiles ~= nil then tagsFiles[tagsFile] = tagsPath
-      else                     log("Error", "Couldn't locate tags file for path '" .. path .. "'.") end                    
+      if tagsFile ~= nil then tagsFiles[tagsFile] = tagsPath
+      else                    log("Error", "Couldn't locate tags file for path '" .. path .. "'.") end                    
     else
       log("Normal", "Ignoring path '" .. path .. "'.")
     end
